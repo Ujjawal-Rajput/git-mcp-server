@@ -101,36 +101,44 @@ Add the following to your MCP client's configuration file (e.g., `cline_mcp_sett
 
 ### Merge Conflict Resolution
 
-When you encounter a merge conflict, follow these steps to resolve it:
+When working with branches, you might encounter merge conflicts. Here's how to resolve them:
 
-1. **Check the status** of your repository:
+1. **Check the status** of your repository to identify conflicts:
    ```bash
    git status
    ```
+   This will show you which files have conflicts.
 
-2. **View the conflicts** in the problematic files. Look for conflict markers:
+2. **Open the conflicting file(s)** and look for the conflict markers:
    ```
    <<<<<<< HEAD
-   Current branch changes
+   Your current branch changes
    =======
-   Incoming branch changes
+   Incoming changes from the branch being merged
    >>>>>>> branch-name
    ```
 
-3. **Edit the file** to resolve the conflict by:
-   - Keeping only the changes you want
-   - Removing the conflict markers
-   - Ensuring the code works as intended
+3. **Resolve the conflict** by:
+   - Deciding which changes to keep (from either branch or a combination)
+   - Removing the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+   - Ensuring the final content is correct and functional
+   - Testing the changes to make sure everything works as expected
 
-4. **Add the resolved file** to staging:
+4. **Mark the file as resolved** by adding it to staging:
    ```bash
    git add <filename>
    ```
 
-5. **Complete the merge** with a commit:
+5. **Complete the merge** with a descriptive commit message:
    ```bash
-   git commit -m "Resolved merge conflict in <filename>"
+   git commit -m "Resolve merge conflict in <filename>"
    ```
+
+   If you're using Git's default merge commit message, you can simply use:
+   ```bash
+   git commit
+   ```
+   This will open your default editor with a pre-filled commit message that you can modify if needed.
 
 ### Quick Start
 
