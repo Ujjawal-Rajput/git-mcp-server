@@ -99,6 +99,39 @@ Add the following to your MCP client's configuration file (e.g., `cline_mcp_sett
 }
 ```
 
+### Merge Conflict Resolution
+
+When you encounter a merge conflict, follow these steps to resolve it:
+
+1. **Check the status** of your repository:
+   ```bash
+   git status
+   ```
+
+2. **View the conflicts** in the problematic files. Look for conflict markers:
+   ```
+   <<<<<<< HEAD
+   Current branch changes
+   =======
+   Incoming branch changes
+   >>>>>>> branch-name
+   ```
+
+3. **Edit the file** to resolve the conflict by:
+   - Keeping only the changes you want
+   - Removing the conflict markers
+   - Ensuring the code works as intended
+
+4. **Add the resolved file** to staging:
+   ```bash
+   git add <filename>
+   ```
+
+5. **Complete the merge** with a commit:
+   ```bash
+   git commit -m "Resolved merge conflict in <filename>"
+   ```
+
 ### Quick Start
 
 1. **Clone a repository**:
