@@ -99,6 +99,40 @@ Add the following to your MCP client's configuration file (e.g., `cline_mcp_sett
 }
 ```
 
+### Quick Start
+
+1. **Clone a repository**:
+   ```javascript
+   const result = await mcpClient.execute('git-mcp-server', 'git_clone', {
+     repositoryUrl: 'https://github.com/username/repo.git',
+     targetPath: '/path/to/clone/into'
+   });
+   ```
+
+2. **Make changes and commit**:
+   ```javascript
+   // Stage changes
+   await mcpClient.execute('git-mcp-server', 'git_add', {
+     files: ['.'],
+     path: '/path/to/repo'
+   });
+   
+   // Create a commit
+   await mcpClient.execute('git-mcp-server', 'git_commit', {
+     message: 'feat: add new feature',
+     path: '/path/to/repo'
+   });
+   ```
+
+3. **Push changes**:
+   ```javascript
+   await mcpClient.execute('git-mcp-server', 'git_push', {
+     path: '/path/to/repo',
+     remote: 'origin',
+     branch: 'main'
+   });
+   ```
+
 ### If running manually (not via MCP client) for development or testing
 
 #### Install via npm
