@@ -120,8 +120,8 @@ When working with branches, you might encounter merge conflicts. Here's how to r
 
 3. **Resolve the conflict** by:
    - Deciding which changes to keep (from either branch or a combination)
-   - Removing the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
-   - Ensuring the final content is correct and functional
+   - Removing the conflict markers - (`<<<<<<<`, `=======`, `>>>>>>>`)
+   - Ensuring the final content is correct and functional.
    - Testing the changes to make sure everything works as expected
 
 4. **Mark the file as resolved** by adding it to staging:
